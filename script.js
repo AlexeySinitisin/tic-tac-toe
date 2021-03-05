@@ -26,17 +26,15 @@ sector.forEach(item =>{
     area.addEventListener('click', ()=>{
         counter = counter + 1; 
     });
-    item.addEventListener('click', (e) =>{
+    function click(e){
         if(counter%2 === 1){
             player = "&#215;"
         }else{
             player = "&#9675;"
         }
-        function addSymbol(player){
             item.innerHTML = player;
-        }
-        addSymbol(player);
         win(sector, player);
-        this.removeEventListener("click", addSymbol);
-    });
+        e.target.removeEventListener("click", click);
+    }
+    item.addEventListener('click', click)
 });
