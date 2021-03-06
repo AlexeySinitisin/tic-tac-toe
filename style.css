@@ -26,11 +26,12 @@ body{
     font-weight: 900;
     justify-content: center;
     font-size: 70px;
+    cursor: pointer;
 }
 .win {
     position: absolute;
     left: 50px;
-    top: 50px;
+    top:150px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -42,4 +43,19 @@ body{
     align-items: center;
     justify-content: center;
     margin-top: 10px;
+}
+.step{
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.step__now{
+    display: flex;
+    padding-left: 20px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px; 
 }
