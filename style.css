@@ -1,10 +1,13 @@
-*{
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-size: 70px;
+    font-family: 'Varela Round', sans-serif;
 }
-body{
+
+body {
     width: 100%;
     height: 100vh;
     display: flex;
@@ -13,16 +16,19 @@ body{
     flex-direction: column;
     background: url("fon.jpg");
 }
-.area{
+
+.area {
     display: flex;
     width: 300px;
     flex-wrap: wrap;
 }
-.box{
-    display:flex;
+
+.box {
+    display: flex;
     flex-direction: column;
 }
-.sector{
+
+.sector {
     border: 1px solid black;
     width: 100px;
     height: 100px;
@@ -32,46 +38,53 @@ body{
     justify-content: center;
     font-size: 70px;
     cursor: pointer;
+    color:blanchedalmond;
 }
-.sector:hover{
-    border:2px solid rgb(144, 197, 190);
+
+.sector:hover {
+    border: 2px solid rgb(144, 197, 190);
 }
+
 .win {
     display: flex;
     align-items: center;
     padding-bottom: 30px;
 }
-.win__block{
+
+.win__block {
     display: flex;
     padding-left: 20px;
     align-items: center;
     justify-content: center;
     margin-top: 10px;
 }
-.step{
+
+.step {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.step__now{
+
+.step__now {
     display: flex;
     padding-left: 20px;
     align-items: center;
     justify-content: center;
-    margin-top: 10px; 
 }
-.reload{
+
+.reload {
     padding: 10px;
     margin-top: 30px;
     font-size: 30px;
-    border:1px solid rgb(170, 167, 167);
+    border: 1px solid rgb(170, 167, 167);
     outline: none;
     cursor: pointer;
-    background:rgb(170, 167, 167);
+    background: rgb(170, 167, 167);
     box-shadow: 5px 3px 10px 3px rgb(200, 199, 199);
     transition-duration: 0.5s;
 }
-.reload:hover{
+
+.reload:hover {
     transform: scale(1.1);
-     transition-duration: 0.5s;
+    transition-duration: 0.5s;
 }
