@@ -60,3 +60,18 @@ body{
     justify-content: center;
     margin-top: 10px; 
 }
+.reload{
+    padding: 10px;
+    margin-top: 30px;
+    font-size: 30px;
+    border:1px solid rgb(170, 167, 167);
+    outline: none;
+    cursor: pointer;
+    background:rgb(170, 167, 167);
+    box-shadow: 5px 3px 10px 3px rgb(200, 199, 199);
+    transition-duration: 0.5s;
+}
+.reload:hover{
+    transform: scale(1.1);
+     transition-duration: 0.5s;
+}

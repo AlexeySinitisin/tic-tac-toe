@@ -1,24 +1,26 @@
 "use strict";
-const area = document.querySelector('.area');
-const sector = document.querySelectorAll('.sector');
-let x;
-let counter = 0;
-let player = "&#9675;";
-function handleClick(player, counter, target){
-    const stepNow = document.querySelector('.step__now');
-    stepNow.innerHTML = player;
+const area = document.querySelector('.area'),
+      sector = document.querySelectorAll('.sector'),
+      step = document.querySelector('.step'),
+      stepNow = document.querySelector('.step__now'),
+      reloadGame = document.querySelector('.reload');
+let x,
+    counter = 0,
+    player = "&#9675;";
+function handleClick(player, counter, target, stepNow, step){
     if(counter%2 === 1){
         player = "&#215;"
-        stepNow.innerHTML = "&#9675;"; 
+        step.innerHTML = `Следующий ходит:<span class="step__now">${"&#9675;"}</span>`;
     }else{
         player = "&#9675;"
-        stepNow.innerHTML = "&#215;";
+        step.innerHTML = `Следующий ходит:<span class="step__now">${"&#215;"}</span>`;
     }
+    
     target.innerHTML = player;
-    win(sector, player, x, area);
+    win(sector, player, x, area, stepNow, step);
     target.removeEventListener("click", handleClick);
 }
-function win (sector, player, x, area){
+function win (sector, player, x, area, stepNow, step){
     const box = document.querySelector('.win__block');
     const victory = [
         [0,1,2],
@@ -31,20 +33,25 @@ function win (sector, player, x, area){
         [2,4,6],
     ];
     victory.forEach(item =>{
-        function doRed(obj){
+        function doBlue(obj){
             obj.style.color = "rgba(49, 245, 219, 0.87)";
         }
         if(sector[item[0]].innerHTML == sector[item[1]].innerHTML && sector[item[1]].innerHTML == sector[item[2]].innerHTML && sector[item[0]].innerHTML != ""){
             box.innerHTML = player;
-            doRed(sector[item[0]]);
-            doRed(sector[item[1]]);
-            doRed(sector[item[2]]);
-            doRed(document.querySelector('.win'));
+            doBlue(sector[item[0]]);
+            doBlue(sector[item[1]]);
+            doBlue(sector[item[2]]);
+            doBlue(document.querySelector('.win'));
             area.removeEventListener('click', x);
+            step.innerHTML = "";
+            stepNow.innerHTML = "";
         }
     });
 }
 area.addEventListener('click', x = (e)=>{
     counter = counter + 1;
-    e.target.addEventListener('click', handleClick(player, counter, e.target))
+    e.target.addEventListener('click', handleClick(player, counter, e.target, stepNow, step))
 });
+reloadGame.addEventListener('click', ()=>{
+    window.location.reload();
+})
