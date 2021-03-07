@@ -10,12 +10,17 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
+    flex-direction: column;
+    background: url("fon.jpg");
 }
 .area{
     display: flex;
     width: 300px;
     flex-wrap: wrap;
+}
+.box{
+    display:flex;
+    flex-direction: column;
 }
 .sector{
     border: 1px solid black;
@@ -28,14 +33,13 @@ body{
     font-size: 70px;
     cursor: pointer;
 }
+.sector:hover{
+    border:2px solid rgb(144, 197, 190);
+}
 .win {
-    position: absolute;
-    left: 50px;
-    top:150px;
     display: flex;
     align-items: center;
-    justify-content: center;
-
+    padding-bottom: 30px;
 }
 .win__block{
     display: flex;
@@ -45,9 +49,6 @@ body{
     margin-top: 10px;
 }
 .step{
-    position: absolute;
-    top: 40px;
-    left: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
