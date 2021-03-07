@@ -9,17 +9,16 @@ let x,
     counter = 0,
     player = "o",
     all = 0;
-
 function doBlue(obj){
     obj.style.color = "rgba(49, 245, 219, 0.87)";
 }
 function handleClick(player, counter, target, stepNow, step){
     if(counter%2 === 1){
         player = "x";
-        step.innerHTML = `Следующий ходит:<span class="step__now">${"o"}</span>`;
+        step.innerHTML = `Сейчас ходит:<span class="step__now">${"o"}</span>`;
     }else{
         player = "o";
-        step.innerHTML = `Следующий ходит:<span class="step__now">${"x"}</span>`;
+        step.innerHTML = `Сейчас ходит:<span class="step__now">${"x"}</span>`;
     }
     target.innerHTML = player;
     target.removeEventListener("click", handleClick);
@@ -50,7 +49,6 @@ function win (sector, player, x, area, stepNow, step, box){
     });
 }
 area.addEventListener('click', x = (e)=>{
-    
     if(e.target.innerHTML == 'x' || e.target.innerHTML == "o"){
         return;
     }else{
